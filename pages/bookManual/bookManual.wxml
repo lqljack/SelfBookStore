@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <image src="{{tempFilePaths }}" bindtap="chooseimage" catchTap="chooseImageTap" mode="aspectFit" style="width: 300rpx; height: 400rpx" />
+  <view class="usermotto">
+    书名：<input class="section" name="titleinput" placeholder="请输入书名" type="text"  value="{{title}}" bindblur="titleInputEvent" />
+    作者： <input  class="section" name="authorinput" placeholder="请输入著者" type="text"   value="{{author}}" bindinput="authorInputEvent" />
+    出版社：<input  class="section" name="publisherinput" placeholder="请输入出版社" type="text"   value="{{publisher}}" bindinput="publisherInputEvent" />
+  </view>
+  <view class="flex-wrp" style="justify-content: space-around;">
+    <button  bindtap="back"> 取消</button>
+    <button bindtap="Tap2folder">加入书库</button>
+  </view>
+</view>

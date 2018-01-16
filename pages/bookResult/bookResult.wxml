@@ -1,0 +1,31 @@
+<view >
+    <loading wx:if="{{showLoading}}">加载中</loading>
+</view>
+
+<view>
+  <modal title="因为某些问题没有搜索到此书，是否手动新建或重新扫描" hidden="{{modalHidden}}" confirm-text="手动新建" cancel-text="重新扫描"
+  bindconfirm="Tap2Manual" bindcancel="back">
+  </modal>
+</view>
+
+<view>
+  <view class="usertext">
+    <text selectable="true">扫描结果：{{scanResult}}</text>
+  </view>
+   <view>------------------------------------</view>
+  <view class="usertext">
+    <text selectable="true">书名：{{titleresult}}\n豆瓣平均分：{{key}}</text>
+  </view>
+  
+  <view style="display:inline-block">
+    <block wx:for="{{stars}}">
+      <image class="star-image" style="left: {{item*75}}rpx" src="{{key > item ?(key-item <= 0.5?halfSrc:selectedSrc) : normalSrc}}">
+      </image>
+    </block>
+  </view>
+  <text selectable="true">关于作者：{{aboutauthor}}\n\n内容简介：{{summary}}</text>
+  <view class="flex-wrp" style="justify-content: space-around;">
+    <button  bindtap="back"> 返回扫码</button>
+    <button bindtap="Tap2folder">加入书库</button>
+  </view>
+</view>

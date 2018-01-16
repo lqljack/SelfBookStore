@@ -1,0 +1,7 @@
+<view class="container">
+  <image class="userinfo-avatar" src="{{starticon}}" style="width: 80%; height: 280rpx" />
+  <text class="userinfo-nickname">小程序标题</text>
+  <button class="topbottom" style="width: 100%;" bindtap="ScanWxImage">书上有码——扫一扫</button>
+  <button style="width: 100%;" bindtap="Tap2Manual">无码手动新建</button>
+  <button style="width: 100%;" bindtap="Tap2folder">进入书库</button>
+</view>

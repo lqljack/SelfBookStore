@@ -1,0 +1,67 @@
+<view class="container">
+点击项能显示详情
+
+<view wx:for="{{books}}" wx:key="this" style="padding: 10px 0;border-bottom: 1px solid #ddd;">
+	<view style="width: 250px;">
+		<text  bindtap="tap2detail" data-index="{{index}}">{{index+1}}、{{item.name}}/{{item.author}}</text>	
+		<view class="body-view" style="display: flex;justify-content: space-between;"  >
+    <text class="textright font12" style="color: #2A53CD;" bindtap="modalShowD" data-index="{{index}}" class="marlr10">  删除</text>	
+		 <text class="textright font12" style="color: #2A53CD;" bindtap="tap2Correct" data-index="{{index}}" >  修改</text>	
+     <switch checked bindchange="switch1Change"/>
+     
+    </view>
+    <view  style="font-size:10pt;" data-index="{{index}}">最近修改时间：{{item.createtime}}</view>	
+  </view>
+  
+</view>
+
+
+
+<button class="martop20" bindtap="modalShowN">
+  快速新建书
+</button>
+
+<button class="martop20" bindtap="modalShowC">
+	清空书单
+</button>
+<button class="martop20" bindtap="resume">
+	同步到上一次清空（bug：第一次要多按一下）
+</button>
+<button class="martop20" bindtap="back">
+  返回上一页
+</button>
+<button class="martop20" bindtap="getout">
+  到主界面
+</button>
+
+
+<view>
+  <modal title="修改信息对话框" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消"
+  bindconfirm="editBindaconfirm" bindcancel="modalBindcancel">
+  书名：<input  name="titleinput" placeholder="请输入书名" type="text" value="{{title}}" bindblur="titleInputEvent" />
+  作者：<input  name="authorinput" placeholder="请输入著者" type="text" value="{{author}}"  bindinput="authorInputEvent" />
+  </modal>
+</view>
+
+<view>
+  <modal title="新建对话框" hidden="{{modalHiddenN}}" confirm-text="确定" cancel-text="取消"
+  bindconfirm="add_before" bindcancel="modalBindcancelN">
+  书名：<input  name="titleinput" placeholder="请输入书名" type="text"  value="" bindblur="titleInputEvent" />
+  作者：<input  name="authorinput" placeholder="请输入著者" type="text"   value="" bindinput="authorInputEvent" />
+  </modal>
+</view>
+
+
+<view>
+  <modal title="是否清空？" hidden="{{modalHiddenC}}" confirm-text="确定" cancel-text="取消"
+  bindconfirm="clear" bindcancel="modalBindcancelC">
+  </modal>
+</view>
+
+<view>
+  <modal title="是否删除该本书？" hidden="{{modalHiddenD}}" confirm-text="确定" cancel-text="取消"
+  bindconfirm="remove" bindcancel="modalBindcancelD">
+  </modal>
+</view>
+
+</view>

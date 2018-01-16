@@ -1,0 +1,11 @@
+<!--detail.wxml-->
+<view class="container">
+  <image src="{{tempFilePaths }}" bindtap="chooseimage"  mode="aspectFit" style="width: 300rpx; height: 400rpx" />
+</view>
+  <view class="usermotto">
+    <text class="section" selectable="true">书名：{{title}}\n作者：{{author}}\n出版商：{{publisher}}\nisbn：{{isbn}}</text>
+    <button  bindtap="back"> 返回</button>
+  </view>
+<view >
+    <loading wx:if="{{showLoading}}">加载中</loading>
+</view>

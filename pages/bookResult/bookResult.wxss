@@ -1,0 +1,17 @@
+.usertext {
+width: 600rpx;  
+word-break: break-all;
+}
+
+.star-image {
+  top: 50rpx;
+  width: 75rpx;
+  height: 75rpx;
+  src: "../images/normal.png";
+}
+
+.flex-wrp{
+    height: 45px;
+    display:flex;
+    background-color: #FFFFFF;
+ }
